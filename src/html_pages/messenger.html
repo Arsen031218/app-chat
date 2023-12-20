@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Messenger Page</title>
+  <link rel="stylesheet" type="text/css" href="../styles/messenger.css">
+</head>
+<body>
+
+<section>
+  <h2>Messages</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Sender</th>
+      <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>23-12-2023</td>
+      <td>Arsen Rysbayev</td>
+      <td>This is a sample message.</td>
+    </tr>
+
+    </tbody>
+  </table>
+</section>
+
+<hr>
+
+<section>
+  <h2>Send a Message</h2>
+  <form id="messageForm">
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" name="recipient" required placeholder="Enter recipient's name">
+    <br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required placeholder="Type your message here"></textarea>
+    <br>
+
+    <button class="button" type="submit">Send</button>
+  </form>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("messageForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var recipient = document.getElementById("recipient").value;
+      var message = document.getElementById("message").value;
+
+      if (!recipient || !message) {
+        alert("Please fill in all fields");
+        return;
+      }
+
+
+      fetch('/api/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          recipient: recipient,
+          message: message,
+        }),
+      })
+              .then(response => response.json())
+              .then(data => {
+                })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+    });
+  });
+</script>
+
+</body>
+</html>

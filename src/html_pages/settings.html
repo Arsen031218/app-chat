@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings Page</title>
+    
+</head>
+<body>
+
+<section>
+    <h2>User Settings</h2>
+    <form id="settingsForm">
+        <label for="enableNotifications">Enable Notifications:</label>
+        <input type="checkbox" id="enableNotifications" name="enableNotifications">
+        <br>
+
+        <label>Choose Theme:</label>
+        <input type="radio" id="lightTheme" name="theme" value="light">
+        <label for="lightTheme">Light</label>
+        <input type="radio" id="darkTheme" name="theme" value="dark">
+        <label for="darkTheme">Dark</label>
+        <br>
+
+        <label for="languagePreference">Language Preference:</label>
+        <select id="languagePreference" name="languagePreference">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+        </select>
+        <br>
+
+        <button type="button" onclick="saveSettings()">Save Settings</button>
+    </form>
+</section>
+
+<script>
+    function saveSettings() {
+
+        const enableNotifications = document.getElementById('enableNotifications').checked;
+        const theme = document.querySelector('input[name="theme"]:checked').value;
+        const languagePreference = document.getElementById('languagePreference').value;
+
+        console.log('Enable Notifications:', enableNotifications);
+        console.log('Theme:', theme);
+        console.log('Language Preference:', languagePreference);
+
+
+    }
+</script>
+
+</body>
+</html>

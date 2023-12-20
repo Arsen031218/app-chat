@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="FAQ page for our website. Get answers to common questions here.">
+    <meta name="keywords" content="FAQ, frequently asked questions, support, help">
+    <title>FAQ Page</title>
+    <link rel="stylesheet" type="text/css" href="../styles/faq.css">
+</head>
+<body>
+
+<section>
+    <h2>Frequently Asked Questions</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>How do I reset my password?</td>
+            <td>Visit the login page and click on the "Forgot Password" link for instructions.</td>
+        </tr>
+
+        <tr>
+            <td>How can I contact customer support?</td>
+            <td>You can reach our customer support team at support@example.com.</td>
+        </tr>
+
+        <tr>
+            <td>What payment methods do you accept?</td>
+            <td>We accept credit/debit cards and PayPal.</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<hr>
+
+<section>
+    <h2>Search FAQs</h2>
+    <div>
+        <label for="searchBar">Search:</label>
+        <input type="text" id="searchBar" name="searchBar">
+        <button type="button">Search</button>
+    </div>
+</section>
+
+<section>
+    <h2>Contact Information</h2>
+    <p>If you have further questions, please contact us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchBar = document.getElementById('searchBar');
+        const searchButton = document.querySelector('button');
+        const rows = document.querySelectorAll('tbody tr');
+
+        searchButton.addEventListener('click', function () {
+            const searchText = searchBar.value.toLowerCase();
+
+            rows.forEach(function (row) {
+                const question = row.cells[0].textContent.toLowerCase();
+                const answer = row.cells[1].textContent.toLowerCase();
+
+                if (question.includes(searchText) || answer.includes(searchText)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

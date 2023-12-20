@@ -1,0 +1,144 @@
+
+
+body {
+    color: #333;
+    background-color: rgb(245, 245, 245);
+}
+
+h2 {
+    color: navy;
+}
+
+
+section {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+
+#messageForm {
+    margin-top: 10px;
+}
+
+
+form input:required, form textarea:required {
+    border: 1px solid #ccc;
+}
+
+
+form label::after {
+    content: "*";
+    color: #510ecb;
+}
+
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+table th, table td {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+section {
+    padding: 20px;
+}
+
+
+table {
+    display: table;
+}
+
+
+h2 {
+    font-size: 2em;
+}
+
+
+table {
+    opacity: 0.9;
+}
+
+
+
+section {
+    position: relative;
+}
+
+
+
+.button {
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    section {
+        width: 100%;
+    }
+
+    table {
+        overflow-x: auto;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    align-self: flex-start;
+}
